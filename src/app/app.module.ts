@@ -12,7 +12,9 @@ import { AccueilComponent } from './accueil/accueil.component'
 import { RouterModule } from '@angular/router'
 import { routes } from './app.routing';
 import { ListeChanteursComponent } from './liste-chanteurs/liste-chanteurs.component';
-import { DetailAlbumComponent } from './detail-album/detail-album.component'
+import { DetailAlbumComponent } from './detail-album/detail-album.component';
+import { ImageCardComponent } from './image-card/image-card.component';
+import { SearchComponent } from './search/search.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { DetailAlbumComponent } from './detail-album/detail-album.component'
     ListeAlbumComponent,
     AccueilComponent,
     ListeChanteursComponent,
-    DetailAlbumComponent
+    DetailAlbumComponent,
+    ImageCardComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

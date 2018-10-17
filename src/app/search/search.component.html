@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+<div id="form-wrapper">
+  <form #searchForm="ngForm" id="search" (ngSubmit)="onFormSubmit(searchForm.value.key)">
+    <mat-form-field>
+      <input matInput type="text" placeholder="Mot cle" ngModel name="key" autocomplete="off">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" form="search">Rechercher</button>
+  </form>
+</div>
+<ng-content></ng-content>

@@ -1,19 +1,8 @@
-<h1>Recherche d'artiste</h1>
-<div id="form-wrapper">
-  <form #searchArtist="ngForm" id="search" (ngSubmit)="rechercherArtiste(searchArtist.value.motcle)">
-    <mat-form-field>
-      <input matInput type="text" placeholder="Mot cle" ngModel name="motcle" autocomplete="off">
-    </mat-form-field>
-    <button mat-raised-button color="primary" type="submit" form="search">Rechercher</button>
-  </form>
-</div>
-<mat-grid-list cols="3">
-  <mat-grid-tile *ngFor="let artist of artists">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>{{artist.name}}</mat-card-title>
-      </mat-card-header>
-      <img mat-card-lg-image *ngIf="artist.imageURL" [src]="artist.imageURL" alt="Image artiste">
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+<app-search title="Recherche de chanteur" (submitted)="rechercherArtiste($event)">
+  <mat-grid-list cols="3">
+    <mat-grid-tile *ngFor="let artist of artists">
+      <app-image-card [title]="artist.name" [imageURL]="artist.imageURL">
+      </app-image-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</app-search>

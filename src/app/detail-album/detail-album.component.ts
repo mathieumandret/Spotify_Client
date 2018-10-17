@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core'
+import {Component, OnInit, ViewEncapsulation} from '@angular/core'
 import {ActivatedRoute} from '@angular/router'
 import {SpotifyService} from '../services/spotify.service'
 import {AlbumDetails} from '../model/albumDetails'
@@ -8,7 +8,8 @@ import {share} from 'rxjs/operators'
 @Component({
   selector: 'app-detail-album',
   templateUrl: './detail-album.component.html',
-  styleUrls: ['./detail-album.component.css']
+  styleUrls: ['./detail-album.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class DetailAlbumComponent implements OnInit {
 

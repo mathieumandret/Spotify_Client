@@ -1,20 +1,13 @@
-<h1>Recherche d'album</h1>
-<div id="form-wrapper">
-  <form #searchAlbum="ngForm" id="search" (ngSubmit)="rechercherAlbum(searchAlbum.value.motcle)">
-    <mat-form-field>
-      <input matInput type="text" placeholder="Mot cle" ngModel name="motcle" autocomplete="off">
-    </mat-form-field>
-    <button mat-raised-button color="primary" type="submit" form="search">Rechercher</button>
-  </form>
-</div>
-<mat-grid-list cols="3">
-  <mat-grid-tile *ngFor="let album of albums">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title><a [routerLink]="['/album', album.id]">{{album.name}}</a></mat-card-title>
-        <mat-card-subtitle>{{album.artists[0].name}}</mat-card-subtitle>
-      </mat-card-header>
-      <img *ngIf="album.imageURL" mat-card-lg-image [src]="album.imageURL" alt="Cover">
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+<app-search title="Recherche d'album" (submitted)="rechercherAlbum($event)">
+  <mat-grid-list cols="3">
+    <mat-grid-tile *ngFor="let album of albums">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><a [routerLink]="['/album', album.id]">{{album.name}}</a></mat-card-title>
+          <mat-card-subtitle>{{album.artists[0].name}}</mat-card-subtitle>
+        </mat-card-header>
+        <img *ngIf="album.imageURL" mat-card-lg-image [src]="album.imageURL" alt="Cover">
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</app-search>

@@ -15,7 +15,7 @@ export class SpotifyService {
   private readonly URL_ALBUM = this.URL + 'search?type=album&market=FR&limit=10&q='
   private readonly URL_ARTIST = this.URL + 'search?type=artist&market=FR&limit=10&q='
   private readonly URL_ALBUM_DETAIL = this.URL + 'albums/'
-  private readonly token = `BQA_tCUdQAIr6bvI-7v-BBRKt4k_UZwg8NzfamC7_DIecKMoDCF8B5_pPj-VBi8o9lvI-kcrAlEmRbgF0Lu6frUo7CWiSU5LQ7auyfbd4EuGq1N7M0Z7tm_2sLOrv3K46jIzKwEukQ`
+  private readonly token = `BQDr7CXXXDA1qrvIs7Vi62pKDxDcmMyjY3J9SJNqIwyAm2UFLnJmQCgEJG1UQnb5FuzaBalq8sjqzf13thcbdT_30QvZMTeIuI2PxsQBIItR7jsA6IGE2XxKhqSlPxk00SKL91fTfw`
   private readonly headers = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

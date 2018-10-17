@@ -1,4 +1,9 @@
-mat-card {
+.mat-card {
   width: 30%;
   margin: auto;
+}
+
+img {
+  width: 100% !important;
+  height: auto !important;
 }
