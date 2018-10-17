@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { SpotifyService } from '../services/spotify.service';
-import { Artist } from '../model/artist';
+import {Component, OnInit} from '@angular/core'
+import {Artist} from '../model/artist'
+import {ArtistService} from '../services/artist.service'
 
 @Component({
   selector: 'app-liste-chanteurs',
@@ -10,14 +10,19 @@ import { Artist } from '../model/artist';
 export class ListeChanteursComponent implements OnInit {
 
   artists: Artist[] = []
+  error: string
 
-  constructor(private spotifyService: SpotifyService) { }
+  constructor(private artistService: ArtistService) {
+  }
 
   ngOnInit() {
   }
 
   rechercherArtiste(key: string) {
-    this.spotifyService.getArtists(key).subscribe(artist => this.artists = artist)
+    this.artistService.search(key)
+      .subscribe(
+        artists => this.artists = artists,
+        () => this.error = 'Impossible de récuperer la liste des artistes'
+      )
   }
-
 }

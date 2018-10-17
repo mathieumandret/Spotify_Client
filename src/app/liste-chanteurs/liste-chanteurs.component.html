@@ -1,5 +1,5 @@
-<app-search title="Recherche de chanteur" (submitted)="rechercherArtiste($event)">
-  <mat-grid-list cols="3">
+<app-search title="Recherche de chanteur" (submitted)="rechercherArtiste($event)" [error]="error">
+  <mat-grid-list cols="3" *ngIf="artists && artists.length > 0">
     <mat-grid-tile *ngFor="let artist of artists">
       <app-image-card [title]="artist.name" [imageURL]="artist.imageURL">
       </app-image-card>

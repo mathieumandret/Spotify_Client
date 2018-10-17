@@ -1,3 +1,6 @@
+<div *ngIf="error">
+  <p class="error-text">Impossible de récuperer l'album</p>
+</div>
 <app-image-card [title]="(album | async)?.name" [subtitle]="(album | async)?.artists[0].name"
                 [imageURL]="(album | async)?.imageURL">
   <ol>

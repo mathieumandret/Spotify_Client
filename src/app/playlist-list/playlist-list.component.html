@@ -1,0 +1,14 @@
+<h1 class="centered">Liste des playlists</h1>
+<mat-grid-list cols="3" *ngIf="playlists && playlists.length > 0">
+  <mat-grid-tile *ngFor="let playlist of playlists">
+    <a class="hidden-link" [routerLink]="['/playlist', playlist.id]">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{playlist.name}}</mat-card-title>
+          <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+        <img class="card-image" *ngIf="playlist.imagesURL" [src]="playlist.imagesURL" alt="Playlist cover">
+      </mat-card>
+    </a>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -1,12 +1,14 @@
-<app-search title="Recherche d'album" (submitted)="rechercherAlbum($event)">
-  <mat-grid-list cols="3">
+<app-search title="Recherche d'album" (submitted)="rechercherAlbum($event)" [error]="error">
+  <mat-grid-list cols="3" *ngIf="albums && albums.length > 0">
     <mat-grid-tile *ngFor="let album of albums">
       <mat-card>
         <mat-card-header>
-          <mat-card-title><a [routerLink]="['/album', album.id]">{{album.name}}</a></mat-card-title>
+          <mat-card-title>{{album.name}}</mat-card-title>
           <mat-card-subtitle>{{album.artists[0].name}}</mat-card-subtitle>
         </mat-card-header>
-        <img *ngIf="album.imageURL" mat-card-lg-image [src]="album.imageURL" alt="Cover">
+        <a [routerLink]="['/album', album.id]">
+          <img *ngIf="album.imageURL" mat-card-lg-image [src]="album.imageURL" alt="Cover">
+        </a>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>

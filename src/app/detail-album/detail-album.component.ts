@@ -1,9 +1,8 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core'
 import {ActivatedRoute} from '@angular/router'
-import {SpotifyService} from '../services/spotify.service'
 import {AlbumDetails} from '../model/albumDetails'
 import {Observable} from 'rxjs'
-import {share} from 'rxjs/operators'
+import {AlbumService} from '../services/album.service'
 
 @Component({
   selector: 'app-detail-album',
@@ -14,14 +13,14 @@ import {share} from 'rxjs/operators'
 export class DetailAlbumComponent implements OnInit {
 
   album: Observable<AlbumDetails>
+  error: string
 
-  constructor(private route: ActivatedRoute, private spotifyService: SpotifyService) {
+  constructor(private route: ActivatedRoute,
+              private albumService: AlbumService) {
   }
 
   ngOnInit() {
-    this.album = this.spotifyService.getAlbumDetails(
-      this.route.snapshot.params['id']
-    ).pipe(share())
+    this.album = this.albumService.getById(this.route.snapshot.params['id'])
   }
 }
 
