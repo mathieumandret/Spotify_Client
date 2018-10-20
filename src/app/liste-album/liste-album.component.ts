@@ -10,8 +10,8 @@ import {AlbumService} from '../services/album.service'
 export class ListeAlbumComponent implements OnInit {
 
 
-  albums: Album[]
-  error: string
+  albums?: Album[]
+  error?: string
 
   constructor(private albumService: AlbumService) {
   }

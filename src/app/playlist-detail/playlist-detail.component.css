@@ -1,0 +1,13 @@
+h2 {
+  text-align: center;
+}
+
+#description, .track-artists {
+  font-weight: 300;
+}
+
+#details {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}

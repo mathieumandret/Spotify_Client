@@ -1,6 +1,12 @@
-import { Album } from './album';
-import { Track } from './track';
+import {Album} from './album'
+import {Track} from './track'
 
-export interface AlbumDetails extends Album {
-    tracks: Track[];
+export class AlbumDetails extends Album {
+  tracks: Track[]
+
+  constructor(json: any) {
+    super(json)
+    this.tracks = json.tracks.items.map((t: any) => new Track(t))
+  }
+
 }

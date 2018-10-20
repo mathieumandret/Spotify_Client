@@ -15,21 +15,17 @@ export class PlaylistService extends BaseSpotifyService {
     super(http, loading, 'users/math119/playlists')
   }
 
-  private parsePlaylist(playlist: any): Playlist {
-    return {
-      id: playlist.id,
-      name: playlist.name,
-      collaborative: playlist.collaborative,
-      imagesURL: (playlist.images.length > 0) ? playlist.images[0].url : undefined
-    }
-  }
-
-  private parsePlaylists(playlists: any[]): Playlist[] {
-    return playlists.map(playlist => this.parsePlaylist(playlist))
+  getById(id: string) {
+    return super.getRequest(`playlists/${id}`)
+      .pipe(map(res => new PlaylistDetails(res)))
   }
 
   getAll() {
     return super.getRequest(this.URL)
       .pipe(map(res => this.parsePlaylists(res.items)))
+  }
+
+  private parsePlaylists(playlists: any[]): Playlist[] {
+    return playlists.map(playlist => new Playlist(playlist))
   }
 }

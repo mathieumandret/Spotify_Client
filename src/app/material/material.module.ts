@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatListModule } from '@angular/material/list'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+import {MatTableModule} from '@angular/material/table'
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
     MatIconModule,
     MatListModule,
     MatSidenavModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTableModule
   ],
   exports: [
     MatCardModule,
@@ -33,7 +35,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
     MatIconModule,
     MatListModule,
     MatSidenavModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTableModule
   ],
   declarations: []
 })
