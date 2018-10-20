@@ -9,8 +9,8 @@ import {ArtistService} from '../services/artist.service'
 })
 export class ListeChanteursComponent implements OnInit {
 
-  artists: Artist[] = []
-  error: string
+  artists?: Artist[] = []
+  error?: string
 
   constructor(private artistService: ArtistService) {
   }

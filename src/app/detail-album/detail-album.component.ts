@@ -12,8 +12,8 @@ import {AlbumService} from '../services/album.service'
 })
 export class DetailAlbumComponent implements OnInit {
 
-  album: Observable<AlbumDetails>
-  error: string
+  album?: Observable<AlbumDetails>
+  error?: string
 
   constructor(private route: ActivatedRoute,
               private albumService: AlbumService) {

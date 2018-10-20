@@ -1,3 +1,9 @@
-<p>
-  playlist-detail works!
-</p>
+<h2>{{playlist?.name}}</h2>
+<p>{{playlist?.description}}</p>
+
+<ul>
+  <li *ngFor="let track of playlist?.tracks">
+    {{ track.title }} {{ track.artists }} {{ track.albumName }} {{ track.duration }}
+  </li>
+
+</ul>

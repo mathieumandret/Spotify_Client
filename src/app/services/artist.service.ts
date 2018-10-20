@@ -15,16 +15,8 @@ export class ArtistService extends BaseSpotifyService {
     super(http, loading, 'search?type=artist&market=FR&limit=10&q=')
   }
 
-  parseArtist(item: any): Artist {
-    return {
-      id: item.id,
-      name: item.name,
-      imageURL: (item.images && item.images.length > 1) ? item.images[1].url : undefined
-    }
-  }
-
   parseArtists(res: any): Artist[] {
-    return res.artists.items.map(item => this.parseArtist(item))
+    return res.artists.items.map((a: any) => new Artist(a))
   }
 
   search(key: string): Observable<Artist[]> {

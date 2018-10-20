@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core'
 import {PlaylistService} from '../services/playlist.service'
 import {Playlist} from '../model/playlist'
 import {tap} from 'rxjs/operators'
@@ -10,7 +10,7 @@ import {tap} from 'rxjs/operators'
 })
 export class PlaylistListComponent implements OnInit {
 
-  playlists: Playlist[]
+  playlists?: Playlist[]
 
   constructor(private playlistListService: PlaylistService) { }
 
