@@ -1,0 +1,10 @@
+<div id="wrapper">
+  <mat-form-field>
+    <input matInput type="text" placeholder="Recherche" #key>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onConfirm(key.value)">
+    <mat-icon>
+      search
+    </mat-icon>
+  </button>
+</div>
