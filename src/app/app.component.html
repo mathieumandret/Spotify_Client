@@ -1,2 +1,23 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>
+      menu
+    </mat-icon>
+  </button>
+  Spotify client
+</mat-toolbar>
+
 <app-loading></app-loading>
-<router-outlet></router-outlet>
+<mat-drawer-container>
+  <mat-drawer mode="side" opened #drawer>
+    <mat-list>
+      <mat-list-item routerLink="">Accueil</mat-list-item>
+      <mat-list-item routerLink="albums">Albums</mat-list-item>
+      <mat-list-item routerLink="artists">Artistes</mat-list-item>
+      <mat-list-item routerLink="playlists">Playlists</mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

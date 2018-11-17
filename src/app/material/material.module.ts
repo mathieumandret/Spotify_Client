@@ -2,11 +2,13 @@ import {NgModule} from '@angular/core'
 import {
   MatButtonModule,
   MatCardModule,
+  MatCheckboxModule,
   MatGridListModule,
   MatIconModule,
   MatInputModule,
   MatListModule,
   MatProgressBarModule,
+  MatSidenavModule, MatSnackBarModule,
   MatTableModule,
   MatToolbarModule
 } from '@angular/material'
@@ -22,7 +24,10 @@ import {
     MatToolbarModule,
     MatProgressBarModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
+    MatSidenavModule,
+    MatCheckboxModule,
+    MatSnackBarModule
   ]
 })
 export class MaterialModule {

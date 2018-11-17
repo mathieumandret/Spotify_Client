@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core'
 import {Observable} from 'rxjs'
 import {Playlist} from '../shared/models/playlist'
+import {PlaylistService} from '../shared/services/playlist.service'
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-playlist-list',
@@ -9,12 +11,17 @@ import {Playlist} from '../shared/models/playlist'
 })
 export class PlaylistListComponent implements OnInit {
 
-  playlists$!: Observable<Playlist>
+  playlists$!: Observable<Playlist[]>
 
-  constructor() {
+  constructor(private playlistService: PlaylistService, private router: Router) {
   }
 
   ngOnInit() {
+    this.playlists$ = this.playlistService.getAll()
+  }
+
+  playlistSelected(playlist: Playlist) {
+    this.router.navigate([`/playlists/details/${playlist.id}`]).then()
   }
 
 }

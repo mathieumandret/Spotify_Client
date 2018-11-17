@@ -2,7 +2,7 @@ import {HttpClient, HttpParams} from '@angular/common/http'
 import {Resource} from '../models/resource'
 import {Deserializer} from '../models/serializers/deserializer'
 import {Observable} from 'rxjs'
-import {map} from 'rxjs/operators'
+import {map, tap} from 'rxjs/operators'
 import {environment} from '../../../environments/environment'
 
 export class ResourceReadService<T extends Resource> {
@@ -19,11 +19,6 @@ export class ResourceReadService<T extends Resource> {
   get(id: string): Observable<T> {
     return this.http.get<any>(`${this.API_URL}/${this.endpoint}/${id}`)
       .pipe(map(res => this.deserializer.fromJson(res)))
-  }
-
-  getAll(): Observable<T[]> {
-    return this.http.get<any>(`${this.API_URL}/${this.endpoint}`)
-      .pipe(map(res => this.convertData(res.items)))
   }
 
   search(key: string): Observable<T[]> {

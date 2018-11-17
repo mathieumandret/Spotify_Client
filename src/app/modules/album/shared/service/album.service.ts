@@ -20,10 +20,4 @@ export class AlbumService extends ResourceReadService<Album> {
       new AlbumDeserializer()
     )
   }
-
-  getDetails(id: string): Observable<AlbumDetails> {
-    return this.http.get(`${this.API_URL}/${this.endpoint}/${id}`)
-      .pipe(map(res => new AlbumDetailsDeserializer().fromJson(res)))
-  }
-
 }

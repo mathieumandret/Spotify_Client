@@ -1,7 +1,8 @@
 import {NgModule} from '@angular/core'
-import {Routes, RouterModule} from '@angular/router'
+import {RouterModule, Routes} from '@angular/router'
 
 const routes: Routes = [
+  {path: '', loadChildren: './modules/accueil/accueil.module#AccueilModule'},
   {path: 'artists', loadChildren: './modules/artist/artist.module#ArtistModule'},
   {path: 'albums', loadChildren: './modules/album/album.module#AlbumModule'},
   {path: 'playlists', loadChildren: './modules/playlist/playlist.module#PlaylistModule'}

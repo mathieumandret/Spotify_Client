@@ -1,1 +1,7 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"playlist-list.component.css"}
+{
+"version": 3,
+"mappings": "AAAA,MAAO;EACL,OAAO,EAAE,KAAK;EACd,MAAM,EAAE,IAAI",
+"sources": ["playlist-list.component.scss"],
+"names": [],
+"file": "playlist-list.component.css"
+}

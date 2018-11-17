@@ -1,0 +1,41 @@
+<h1 class="mat-display-2 title">{{playlist.name}}</h1>
+<img [src]="playlist.imageURL" alt="playlist_image">
+<table mat-table [dataSource]="tracks" class="mat-elevation-z1">
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef>Titre</th>
+    <td mat-cell *matCellDef="let track">{{ track.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="artist">
+    <th mat-header-cell *matHeaderCellDef>Artiste</th>
+    <td mat-cell *matCellDef="let track">{{ track.artists.join(', ') }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="album">
+    <th mat-header-cell *matHeaderCellDef>Album</th>
+    <td mat-cell *matCellDef="let track">{{ track.albumName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="extrait">
+    <th mat-header-cell *matHeaderCellDef>Extrait</th>
+    <td mat-cell *matCellDef="let track">
+      <audio controls *ngIf="track.url">
+        <source [src]="track.url"/>
+      </audio>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="supprimer">
+    <th mat-header-cell *matHeaderCellDef>Supprimer</th>
+    <td mat-cell *matCellDef="let track">
+      <button mat-icon-button (click)="delete(track)">
+        <mat-icon>
+          delete
+        </mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

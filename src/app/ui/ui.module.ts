@@ -11,7 +11,7 @@ import {ResourceListComponent} from './resource-list/resource-list.component'
     CommonModule,
     MaterialModule
   ],
-  exports: [SearchComponent, LoadingComponent, ResourceListComponent]
+  exports: [SearchComponent, LoadingComponent, ResourceListComponent, MaterialModule]
 })
 export class UiModule {
 }

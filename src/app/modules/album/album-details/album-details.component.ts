@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core'
-import {ActivatedRoute} from '@angular/router'
-import {Observable} from 'rxjs'
 import {AlbumDetails} from '../shared/models/album-details'
-import {AlbumService} from '../shared/service/album.service'
+import {ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-album-details',
@@ -11,17 +9,14 @@ import {AlbumService} from '../shared/service/album.service'
 })
 export class AlbumDetailsComponent implements OnInit {
 
-  album$!: Observable<AlbumDetails>
+  album!: AlbumDetails
 
-  constructor(
-    private albumService: AlbumService,
-    private route: ActivatedRoute
-  ) {
+  constructor(private activatedRoute: ActivatedRoute) {
   }
 
+
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id')
-    this.album$ = this.albumService.getDetails(id)
+    this.album = this.activatedRoute.snapshot.data.album
   }
 
 }
