@@ -1,13 +1,9 @@
-<div id="details">
-  <h2>{{playlist?.name}}</h2>
-  <p id="description">{{playlist?.description}}</p>
+<h2>{{playlist?.name}}</h2>
+<p>{{playlist?.description}}</p>
 
+<ul>
+  <li *ngFor="let track of playlist?.tracks">
+    {{ track.title }} {{ track.artists }} {{ track.albumName }} {{ track.duration }}
+  </li>
 
-  <table *ngIf="playlist?.tracks" mat-table [dataSource]="playlist?.tracks">
-    <ng-container matColumnDef="title">
-      <th mat-header-cell *matHeaderCellDef> #</th>
-      <td mat-cell *matCellDef="let track"> {{track.title}}</td>
-    </ng-container>
-  </table>
-
-</div>
+</ul>
