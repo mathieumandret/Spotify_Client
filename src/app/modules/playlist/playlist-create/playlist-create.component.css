@@ -1,0 +1,12 @@
+.creation-form {
+  width: 90%;
+  margin: auto;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly; }
+  .creation-form button {
+    display: block; }
+
+/*# sourceMappingURL=playlist-create.component.css.map */

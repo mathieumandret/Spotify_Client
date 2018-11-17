@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.title {
+  text-align: center;
+}
+
+.search-wrapper {
+  padding: 20px;
+  width: 40%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}

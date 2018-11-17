@@ -1,0 +1,29 @@
+<div id="wrapper">
+  <h1 class="mat-display-2 title">Créer une playlist</h1>
+
+  <div class="mat-elevation-z1">
+
+    <form class="creation-form" [formGroup]="form">
+      <mat-form-field>
+        <input matInput type="text" placeholder="Nom" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field>
+    <textarea matInput type="text" placeholder="Description" formControlName="description">
+    </textarea>
+      </mat-form-field>
+
+      <mat-checkbox formControlName="isPublic">
+        Publique
+      </mat-checkbox>
+
+      <button mat-button color="primary" [disabled]="!form.valid" (click)="confirm()">
+        Créer
+        <mat-icon>
+          add
+        </mat-icon>
+      </button>
+    </form>
+
+  </div>
+</div>

@@ -1,27 +1,23 @@
-<mat-toolbar color="basic">
-  <mat-toolbar-row>
-    <button type="button" mat-icon-button color="basic" (click)="drawer.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>Utilisation de Spotify</span>
-  </mat-toolbar-row>
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>
+      menu
+    </mat-icon>
+  </button>
+  Spotify client
 </mat-toolbar>
 
-<mat-sidenav-container>
-  <mat-sidenav #drawer mode="side" opened role="navigation">
-    <mat-nav-list>
-      <a mat-list-item routerLink="accueil">Accueil</a>
-      <a mat-list-item routerLink="albums">Albums</a>
-      <a mat-list-item routerLink="chanteurs">Chanteurs</a>
-      <a mat-list-item routerLink="playlists">Playlists</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div *ngIf="isLoading">
-      <div id="loading">
-        <mat-spinner></mat-spinner>
-      </div>
-    </div>
+<app-loading></app-loading>
+<mat-drawer-container>
+  <mat-drawer mode="side" opened #drawer>
+    <mat-list>
+      <mat-list-item routerLink="">Accueil</mat-list-item>
+      <mat-list-item routerLink="albums">Albums</mat-list-item>
+      <mat-list-item routerLink="artists">Artistes</mat-list-item>
+      <mat-list-item routerLink="playlists">Playlists</mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content>
     <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  </mat-drawer-content>
+</mat-drawer-container>

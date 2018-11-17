@@ -1,26 +1,4 @@
-#loading {
-  z-index: 10;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-}
+mat-drawer-container {
+  background-color: white; }
 
-.error-text {
-  color: #ff6e56;
-  text-align: center;
-  font-size: 2em;
-}
-
-.card-image {
-  width: 100% !important;
-  height: auto !important;
-  margin: auto;
-}
-
-.centered {
-  text-align: center;
-}
-
-.hidden-link {
-  text-decoration: none;
-}
+/*# sourceMappingURL=app.component.css.map */

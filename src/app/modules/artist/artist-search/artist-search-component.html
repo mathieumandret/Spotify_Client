@@ -1,0 +1,5 @@
+<h1 class="mat-display-2 title">Rechercher un artiste</h1>
+<div class="search-wrapper mat-elevation-z1">
+  <app-search (confirmed)="search($event)"></app-search>
+</div>
+<app-resource-list [clickable]="false" [resources$]="results$"></app-resource-list>

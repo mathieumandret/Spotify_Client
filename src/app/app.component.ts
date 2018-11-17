@@ -1,23 +1,9 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core'
-import {LoadingService} from './services/loading.service'
+import {Component} from '@angular/core'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-
-  isLoading = false
-
-  constructor(private loadingService: LoadingService) {
-  }
-
-  ngOnInit() {
-    this.loadingService.isLoading().subscribe(loading => {
-      this.isLoading = loading
-    })
-  }
-
+export class AppComponent {
 }
