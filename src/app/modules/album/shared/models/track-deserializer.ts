@@ -10,6 +10,9 @@ export class TrackDeserializer implements Deserializer<Track> {
     track.url = json.preview_url
     track.duration = String((json.duration_ms / 1000 / 60).toFixed(2))
     track.artists = json.artists.map(a => a.name)
+    if (json.album) {
+      track.albumName = json.album.name
+    }
     return track
   }
 

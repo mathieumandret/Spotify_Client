@@ -1,7 +1,1 @@
-{
-"version": 3,
-"mappings": "AAAA,oBAAqB;EACnB,gBAAgB,EAAE,KAAK",
-"sources": ["app.component.scss"],
-"names": [],
-"file": "app.component.css"
-}
+{"version":3,"sourceRoot":"","sources":["app.component.scss"],"names":[],"mappings":"AAAA;EACE","file":"app.component.css"}

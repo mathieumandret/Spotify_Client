@@ -1,6 +1,7 @@
 import {Deserializer} from '../../../../shared/models/serializers/deserializer'
 import {Playlist} from './playlist'
-import {TrackDetailsDeserializer} from './track-details-deserializer'
+import {TrackDeserializer} from '../../../album/shared/models/track-deserializer'
+import {UserDeserializer} from '../../../user/models/user-deserializer'
 
 export class PlaylistDeserializer implements Deserializer<Playlist> {
 
@@ -12,9 +13,10 @@ export class PlaylistDeserializer implements Deserializer<Playlist> {
     playlist.description = json.description
     playlist.imageURL = json.images.length > 0 ? json.images[0].url : '/assets/album-placeholder.png'
     if (json.tracks.items) {
-      const deserializer = new TrackDetailsDeserializer()
+      const deserializer = new TrackDeserializer()
       playlist.tracks = json.tracks.items.map(item => deserializer.fromJson(item.track))
     }
+    playlist.owner = new UserDeserializer().fromJson(json.owner)
     return playlist
   }
 

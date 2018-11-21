@@ -1,9 +1,11 @@
 img {
   margin: auto auto 2%;
   display: block;
-  width: 200px; }
+  width: 200px;
+}
 
 table {
-  width: 100%; }
+  width: 100%;
+}
 
 /*# sourceMappingURL=playlist-details.component.css.map */
