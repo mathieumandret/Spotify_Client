@@ -2,7 +2,7 @@ import {HttpClient, HttpParams} from '@angular/common/http'
 import {Resource} from '../models/resource'
 import {Deserializer} from '../models/serializers/deserializer'
 import {Observable} from 'rxjs'
-import {map, tap} from 'rxjs/operators'
+import {map} from 'rxjs/operators'
 import {environment} from '../../../environments/environment'
 
 export class ResourceReadService<T extends Resource> {

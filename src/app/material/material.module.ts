@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core'
 import {
   MatButtonModule,
   MatCardModule,
-  MatCheckboxModule,
+  MatCheckboxModule, MatDialogModule,
   MatGridListModule,
   MatIconModule,
   MatInputModule,
@@ -27,7 +27,8 @@ import {
     MatListModule,
     MatSidenavModule,
     MatCheckboxModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule {

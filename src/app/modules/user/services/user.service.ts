@@ -11,16 +11,25 @@ import {map} from 'rxjs/operators'
 })
 export class UserService extends ResourceReadService<User> {
 
+  private currentUser: User
+
   constructor(http: HttpClient) {
     super(
       http,
       'me',
       new UserDeserializer()
     )
+    // Telecharger les information de l'utilisateur à la premiere injection
+    // du service
+    this.getUserInfo().subscribe(user => this.currentUser = user)
   }
 
-  get(): Observable<User> {
+  private getUserInfo(): Observable<User> {
     return this.http.get<any>(`${this.API_URL}/${this.endpoint}`)
       .pipe(map(res => this.deserializer.fromJson(res)))
+  }
+
+  getCurrentUser(): User {
+    return this.currentUser
   }
 }
