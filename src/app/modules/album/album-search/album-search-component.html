@@ -1,6 +1,4 @@
 <h1 class="mat-display-2 title">Rechercher un album</h1>
-<div class="search-wrapper mat-elevation-z1">
-  <app-search (confirmed)="search($event)"></app-search>
-</div>
+<app-search (confirmed)="search($event)"></app-search>
 <app-resource-list [clickable]="true" [resources$]="results$" (clicked)="albumSelected($event)">
 </app-resource-list>

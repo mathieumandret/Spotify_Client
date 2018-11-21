@@ -5,7 +5,12 @@ img {
 }
 
 table {
-  width: 100%;
+  width: 90%;
+  margin: auto;
+}
+
+.delete-icon {
+  color: #e53935;
 }
 
 /*# sourceMappingURL=playlist-details.component.css.map */

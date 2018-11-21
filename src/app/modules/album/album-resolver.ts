@@ -7,10 +7,15 @@ import {AlbumService} from './shared/service/album.service'
 @Injectable()
 export class AlbumResolver implements Resolve<Album> {
 
-  constructor(private service: AlbumService) { }
+  constructor(private service: AlbumService) {
+  }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Album> {
-    return this.service.get(route.paramMap.get('id'))
+    const id = route.paramMap.get('id')
+    if (id === null) {
+      throw Error('album id in route is null')
+    }
+    return this.service.get(id)
   }
 
 }

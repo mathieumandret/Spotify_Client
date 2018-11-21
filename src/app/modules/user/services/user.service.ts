@@ -11,7 +11,7 @@ import {map} from 'rxjs/operators'
 })
 export class UserService extends ResourceReadService<User> {
 
-  private currentUser: User
+  private currentUser?: User
 
   constructor(http: HttpClient) {
     super(
@@ -30,6 +30,9 @@ export class UserService extends ResourceReadService<User> {
   }
 
   getCurrentUser(): User {
+    if (this.currentUser === undefined) {
+      throw Error('No user loaded')
+    }
     return this.currentUser
   }
 }

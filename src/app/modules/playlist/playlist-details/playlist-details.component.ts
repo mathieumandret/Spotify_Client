@@ -27,7 +27,7 @@ export class PlaylistDetailsComponent implements OnInit {
     this.playlist = this.activatedRoute.snapshot.data.playlist
     // N'afficher la colonne supprimer que si l'utilisateur
     // est le proprietaire de la playlist
-    if (this.playlist.owner.id === this.userService.getCurrentUser().id) {
+    if (this.playlist.owner && this.playlist.owner.id === this.userService.getCurrentUser().id) {
       this.displayedColumns.push('supprimer')
     }
     this.tracks = new MatTableDataSource(this.playlist.tracks)
@@ -37,8 +37,7 @@ export class PlaylistDetailsComponent implements OnInit {
     this.playlistService.deleteTrack(this.playlist, track)
       .subscribe(
         () => {
-          this.playlist.tracks = this.playlist.tracks.filter(t => t.id !== track.id)
-          this.tracks = new MatTableDataSource(this.playlist.tracks)
+          this.tracks.data = this.tracks.data.filter(t => t.id !== track.id)
           console.log('Piste supprimée')
         },
         () => console.log('Erreur suppression')

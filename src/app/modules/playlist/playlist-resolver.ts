@@ -11,7 +11,11 @@ export class PlaylistResolver implements Resolve<Playlist> {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Playlist> {
-    return this.service.get(route.paramMap.get('id'))
+    const id = route.paramMap.get('id')
+    if (id === null) {
+      throw Error('Playlist id in route is null')
+    }
+    return this.service.get(id)
   }
 
 }

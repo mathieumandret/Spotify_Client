@@ -9,15 +9,20 @@ body {
 }
 
 .title {
+  margin-top: 2% !important;
+  font-size: 3.5em !important;
   text-align: center;
 }
 
-.search-wrapper {
-  padding: 20px;
-  width: 40%;
+.app-search-wrapper {
+  border-radius: 5px;
+  width: 350px;
+  height: 100px;
   margin: auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

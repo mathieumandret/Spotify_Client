@@ -1,5 +1,31 @@
-table {
+mat-card {
   width: 80%;
+  margin: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.album-card-header {
+  display: flex;
+}
+.album-card-header img {
+  width: 20%;
+  height: auto;
+  align-self: center;
+}
+.album-card-header .album-info {
+  margin-left: 30px;
+}
+.album-card-header .album-info h3 {
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+.album-card-header .album-info p {
+  font-size: 1.2em;
+  font-weight: 300;
+  margin-top: 0;
 }
 
 /*# sourceMappingURL=album-details.component.css.map */

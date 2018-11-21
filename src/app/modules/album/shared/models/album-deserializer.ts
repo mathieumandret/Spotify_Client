@@ -8,10 +8,10 @@ export class AlbumDeserializer implements Deserializer<Album> {
     album.name = json.name
     album.id = json.id
     album.imageURL = json.images.length > 0 ? json.images[0].url : '/assets/album-placeholder.png'
-    album.artists = json.artists.map(a => a.name)
+    album.artists = json.artists.map((a: any) => a.name)
     if (json.tracks) {
       const trackDeserializer = new TrackDeserializer()
-      album.tracks = json.tracks.items.map(t => trackDeserializer.fromJson(t))
+      album.tracks = json.tracks.items.map((t: any) => trackDeserializer.fromJson(t))
     }
     return album
   }

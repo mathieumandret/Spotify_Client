@@ -7,17 +7,31 @@
   Spotify client
 </mat-toolbar>
 
-<app-loading></app-loading>
-<mat-drawer-container>
-  <mat-drawer mode="side" opened #drawer>
-    <mat-list>
-      <mat-list-item routerLink="">Accueil</mat-list-item>
-      <mat-list-item routerLink="albums">Albums</mat-list-item>
-      <mat-list-item routerLink="artists">Artistes</mat-list-item>
-      <mat-list-item routerLink="playlists">Playlists</mat-list-item>
-    </mat-list>
-  </mat-drawer>
-  <mat-drawer-content>
-    <router-outlet></router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
+<div id="app-wrapper">
+  <mat-drawer-container>
+    <mat-drawer [mode]="isMobile.matches ? 'over' : 'side' " opened #drawer>
+      <mat-list>
+        <mat-list-item routerLink="">
+          <mat-icon matListIcon>home</mat-icon>
+          <span>Accueil</span>
+        </mat-list-item>
+        <mat-list-item routerLink="albums">
+          <mat-icon matListIcon>album</mat-icon>
+          <span>Albums</span>
+        </mat-list-item>
+        <mat-list-item routerLink="artists">
+          <mat-icon matListIcon>person</mat-icon>
+          <span>Artistes</span>
+        </mat-list-item>
+        <mat-list-item routerLink="playlists">
+          <mat-icon matListIcon>playlist_play</mat-icon>
+          <span>Playlists</span>
+        </mat-list-item>
+      </mat-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-loading></app-loading>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

@@ -1,4 +1,24 @@
+$toolbar-height: 64px;
+$loading-bar-height: 4px;
+
 mat-drawer-container {
   background-color: white;
 }
 
+mat-drawer {
+  width: 150px;
+}
+
+mat-drawer-content {
+  height: calc(100vh - #{$toolbar-height} - #{$loading-bar-height});
+}
+
+mat-list-item {
+  cursor: pointer;
+  &:hover, &.active {
+    background-color: #e0e0e0;
+  }
+  mat-icon {
+    margin-right: 20px;
+  }
+}

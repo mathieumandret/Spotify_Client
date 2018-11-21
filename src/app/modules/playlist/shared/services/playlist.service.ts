@@ -28,7 +28,7 @@ export class PlaylistService extends ResourceReadService<Playlist> {
 
   getWritable(): Observable<Playlist[]> {
     return this.getAll()
-      .pipe(map((playlists) => playlists.filter(p => p.owner.id === this.userService.getCurrentUser().id)))
+      .pipe(map((playlists) => playlists.filter(p => p.owner && (p.owner.id === this.userService.getCurrentUser().id))))
   }
 
   deleteTrack(playlist: Playlist, track: Track): Observable<Playlist> {
@@ -39,7 +39,7 @@ export class PlaylistService extends ResourceReadService<Playlist> {
       .pipe(
         filter(event => event.type === HttpEventType.Response),
         map(event => (event as HttpResponse<Playlist>).body)
-      )
+      ) as Observable<Playlist>
   }
 
   addTrack(playlist: Playlist, track: Track): Observable<void> {

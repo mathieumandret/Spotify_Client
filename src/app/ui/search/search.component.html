@@ -1,8 +1,8 @@
-<div id="wrapper">
+<div class="app-search-wrapper mat-elevation-z1">
   <mat-form-field>
     <input matInput type="text" placeholder="Recherche" #key>
   </mat-form-field>
-  <button mat-raised-button color="primary" (click)="onConfirm(key.value)">
+  <button mat-raised-button color="primary" (click)="onConfirm(key.value)" [disabled]="key.value.trim().length === 0">
     <mat-icon>
       search
     </mat-icon>

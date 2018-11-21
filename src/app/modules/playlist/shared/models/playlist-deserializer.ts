@@ -14,7 +14,7 @@ export class PlaylistDeserializer implements Deserializer<Playlist> {
     playlist.imageURL = json.images.length > 0 ? json.images[0].url : '/assets/album-placeholder.png'
     if (json.tracks.items) {
       const deserializer = new TrackDeserializer()
-      playlist.tracks = json.tracks.items.map(item => deserializer.fromJson(item.track))
+      playlist.tracks = json.tracks.items.map((item: any) => deserializer.fromJson(item.track))
     }
     playlist.owner = new UserDeserializer().fromJson(json.owner)
     return playlist

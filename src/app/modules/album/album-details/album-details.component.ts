@@ -30,7 +30,7 @@ export class AlbumDetailsComponent implements OnInit {
     this.album = this.activatedRoute.snapshot.data.album
     this.tracks = new MatTableDataSource(this.album.tracks)
     // N'afficher la colonne extrait que si au moins une piste a un extrait
-    if (this.album.tracks.filter(t => t.url !== null).length > 0) {
+    if (this.album.tracks && this.album.tracks.filter(t => t.url !== null).length > 0) {
       this.displayedColumns.splice(this.displayedColumns.length - 1, 0, 'extract')
     }
   }

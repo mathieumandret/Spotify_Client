@@ -1,5 +1,5 @@
 <div>
-  <mat-grid-list cols="3" rowHeight="200px">
+  <mat-grid-list [cols]="columns">
     <mat-grid-tile
       *ngFor="let resource of (resources$ | async)"
       colspan="1"
@@ -10,10 +10,12 @@
             {{resource.name}}
           </mat-card-title>
         </mat-card-header>
-        <img mat-card-md-image (click)="elementSelected(resource)"
-             [class.clickable]="clickable"
-             [src]="resource.imageURL"
-             alt="resource_image">
+        <div id="image-wrapper">
+          <img (click)="elementSelected(resource)"
+               [class.clickable]="clickable"
+               [src]="resource.imageURL"
+               alt="resource_image">
+        </div>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>

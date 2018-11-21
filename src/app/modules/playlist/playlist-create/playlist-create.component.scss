@@ -1,5 +1,5 @@
 .creation-form {
-  width: 90%;
+  width: 100%;
   margin: auto;
   padding-top: 20px;
   display: flex;
@@ -10,5 +10,16 @@
 
   button {
     display: block;
+    margin-top: 2%;
+    margin-bottom: 2%;
   }
+}
+
+#wrapper {
+  margin: auto;
+  width: 600px;
+  @media (max-width: 700px) {
+    width: 90%;
+  }
+  border-radius: 5px;
 }

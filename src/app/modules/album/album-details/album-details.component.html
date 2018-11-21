@@ -1,10 +1,11 @@
 <mat-card>
-  <mat-card-header>
-    <mat-card-title>
-      {{album.name}}
-    </mat-card-title>
-  </mat-card-header>
-  <img mat-card-md-image [src]="album.imageURL" alt="album_art">
+  <div class="album-card-header">
+    <img [src]="album.imageURL" alt="album_art">
+    <div class="album-info">
+      <h3>{{album.name}}</h3>
+      <p>{{album.artists?.join(', ')}}</p>
+    </div>
+  </div>
   <mat-card-content>
     <table mat-table [dataSource]="tracks">
       <ng-container matColumnDef="title">
@@ -35,7 +36,7 @@
         <td mat-cell *matCellDef="let track">
           <button mat-icon-button (click)="addToPlaylist(track)">
             <mat-icon>
-              add
+              playlist_add
             </mat-icon>
           </button>
         </td>
