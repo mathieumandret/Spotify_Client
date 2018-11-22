@@ -1,0 +1,11 @@
+mat-list-item {
+  cursor: pointer;
+}
+mat-list-item:hover, mat-list-item.active {
+  background-color: #e0e0e0;
+}
+mat-list-item mat-icon {
+  margin-right: 20px;
+}
+
+/*# sourceMappingURL=menu-item.component.css.map */

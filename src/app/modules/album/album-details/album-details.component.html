@@ -1,6 +1,6 @@
 <mat-card>
   <div class="album-card-header">
-    <img [src]="album.imageURL" alt="album_art">
+    <img [src]="album.imageURL" alt="album_art" class="details-img mat-elevation-z2">
     <div class="album-info">
       <h3>{{album.name}}</h3>
       <p>{{album.artists?.join(', ')}}</p>
@@ -25,9 +25,7 @@
       <ng-container matColumnDef="extract">
         <th mat-header-cell *matHeaderCellDef>Extrait</th>
         <td mat-cell *matCellDef="let track">
-          <audio *ngIf="track.url" controls>
-            <source [src]="track.url"/>
-          </audio>
+          <app-player [url]="track.url"></app-player>
         </td>
       </ng-container>
 

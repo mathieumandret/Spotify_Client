@@ -25,4 +25,8 @@ body {
   align-items: center;
 }
 
+.details-img {
+  border-radius: 3%;
+}
+
 /*# sourceMappingURL=styles.css.map */

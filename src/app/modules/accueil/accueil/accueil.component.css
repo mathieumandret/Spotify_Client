@@ -1,3 +1,47 @@
+h1 {
+  margin-bottom: 3%;
+}
 
+h2 {
+  font-weight: 400;
+  text-align: center;
+  margin-top: 2%;
+}
+
+#links {
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-evenly;
+}
+#links mat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#links mat-card-header mat-card-title {
+  font-weight: 400;
+}
+#links img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+#links mat-card:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  box-shadow: 0 3px 2px -1px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 2px 4px 0px rgba(0, 0, 0, 0.12) !important;
+  transition: all 200ms ease-out;
+}
+
+#credits {
+  position: absolute;
+  bottom: 0;
+  right: 1%;
+  font-size: 0.8em;
+}
+#credits a {
+  text-decoration: none;
+  color: gray;
+}
 
 /*# sourceMappingURL=accueil.component.css.map */

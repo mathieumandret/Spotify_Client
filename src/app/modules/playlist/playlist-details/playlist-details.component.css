@@ -1,16 +1,28 @@
-img {
-  margin: auto auto 2%;
-  display: block;
-  width: 200px;
-}
-
-table {
+mat-card {
   width: 90%;
   margin: auto;
 }
 
-.delete-icon {
-  color: #e53935;
+#playlist-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#playlist-header img {
+  margin: auto auto 2%;
+  display: block;
+  width: 200px;
+}
+#playlist-header h3 {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 0;
+  font-weight: 500;
+}
+
+table {
+  width: 100%;
+  margin: auto;
 }
 
 /*# sourceMappingURL=playlist-details.component.css.map */

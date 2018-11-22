@@ -1,0 +1,9 @@
+mat-list-item {
+  cursor: pointer;
+  &:hover, &.active {
+    background-color: #e0e0e0;
+  }
+  mat-icon {
+    margin-right: 20px;
+  }
+}

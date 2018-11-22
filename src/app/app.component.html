@@ -9,24 +9,17 @@
 
 <div id="app-wrapper">
   <mat-drawer-container>
-    <mat-drawer [mode]="isMobile.matches ? 'over' : 'side' " opened #drawer>
+    <mat-drawer [mode]="isMobile.matches ? 'over' : 'side' " #drawer>
       <mat-list>
-        <mat-list-item routerLink="">
-          <mat-icon matListIcon>home</mat-icon>
-          <span>Accueil</span>
-        </mat-list-item>
-        <mat-list-item routerLink="albums">
-          <mat-icon matListIcon>album</mat-icon>
-          <span>Albums</span>
-        </mat-list-item>
-        <mat-list-item routerLink="artists">
-          <mat-icon matListIcon>person</mat-icon>
-          <span>Artistes</span>
-        </mat-list-item>
-        <mat-list-item routerLink="playlists">
-          <mat-icon matListIcon>playlist_play</mat-icon>
-          <span>Playlists</span>
-        </mat-list-item>
+        <app-menu-item title="Accueil" icon="home" routerLink="" [selectedTitle]="selectedItemTitle">
+        </app-menu-item>
+        <app-menu-item title="Albums" icon="album" routerLink="albums" [selectedTitle]="selectedItemTitle">
+        </app-menu-item>
+        <app-menu-item title="Artistes" icon="person" routerLink="artists" [selectedTitle]="selectedItemTitle">
+        </app-menu-item>
+        <app-menu-item title="Playlists" icon="playlist_play" routerLink="playlists"
+                       [selectedTitle]="selectedItemTitle">
+        </app-menu-item>
       </mat-list>
     </mat-drawer>
     <mat-drawer-content>

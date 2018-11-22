@@ -2,8 +2,8 @@
   <mat-form-field>
     <input matInput type="text" placeholder="Recherche" #key>
   </mat-form-field>
-  <button mat-raised-button color="primary" (click)="onConfirm(key.value)" [disabled]="key.value.trim().length === 0">
-    <mat-icon>
+  <button mat-raised-button color="accent" (click)="onConfirm(key.value)" [disabled]="key.value.trim().length === 0">
+    <mat-icon style="color: white">
       search
     </mat-icon>
   </button>

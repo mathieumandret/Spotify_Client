@@ -1,0 +1,13 @@
+<audio controls #audio>
+  <source [src]="url"/>
+</audio>
+
+<div id="player-wrapper">
+  <button mat-icon-button color="primary" (click)="play()">
+    <mat-icon>
+      {{ isPlaying ? 'pause' : 'play_arrow' }}
+    </mat-icon>
+  </button>
+  <mat-slider (change)="sliderChange($event)" [class.visible]="isPlaying" [value]="player.currentTime" min="0"
+              [max]="player.duration"></mat-slider>
+</div>

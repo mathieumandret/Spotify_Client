@@ -1,5 +1,10 @@
-.clickable {
+.clickable:hover {
   cursor: pointer;
+}
+
+img.clickable:hover {
+  transform: scale(1.02);
+  transition-duration: 500ms;
 }
 
 mat-card {
@@ -11,7 +16,6 @@ mat-card mat-card-header {
   margin-bottom: 5%;
 }
 mat-card mat-card-title {
-  color: #424242;
   display: inline-block;
   margin: auto;
   width: 100%;
