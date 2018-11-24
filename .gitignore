@@ -25,7 +25,9 @@
 !.vscode/extensions.json
 
 # misc
-/.sass-cache
+**/.sass-cache/
+*.map
+*.css
 /connect.lock
 /coverage
 /libpeerconnection.log

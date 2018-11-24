@@ -1,21 +1,4 @@
 <div id="main">
   <h1 class="mat-display-2 title">Accueil</h1>
   <h2>Bienvenue dans notre application de gestion de musique</h2>
-  <div id="links">
-    <mat-card *ngFor="let link of links" [routerLink]="link.link">
-      <mat-card-header>
-        <mat-card-title>
-          {{link.title}}
-        </mat-card-title>
-      </mat-card-header>
-      <img mat-card-md-image [src]="link.imageURL" alt="link image">
-    </mat-card>
-  </div>
-
-  <div id="credits">Icons made by <a href="https://www.flaticon.com/authors/roundicons"
-                                     title="Roundicons">Roundicons</a>
-    from <a
-      href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a
-      href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
-  </div>
 </div>
