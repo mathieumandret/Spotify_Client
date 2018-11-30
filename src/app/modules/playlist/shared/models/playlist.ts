@@ -8,5 +8,4 @@ export class Playlist extends Resource {
   description?: string
   public ?: boolean
   owner?: User
-  canWrite = false
 }
